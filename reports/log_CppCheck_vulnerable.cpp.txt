@@ -1,0 +1,6 @@
+--- Analysis Report for CppCheck --- 
+File: src/vulnerable.cpp
+
+Found 2 issues:
+[Line 9] [ERROR]: Buffer is accessed out of bounds: buffer
+[Line 19] [ERROR]: Memory leak: ptr
