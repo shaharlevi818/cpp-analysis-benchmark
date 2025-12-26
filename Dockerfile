@@ -10,6 +10,7 @@ build-essential \
     clang \
     clang-tidy \
     python3 \
+    python3-pip \
     git \
     nano \
     && rm -rf /var/lib/apt/lists/*
