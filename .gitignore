@@ -1,0 +1,20 @@
+# C++ Compiled Files
+*.o
+*.obj
+*.exe
+*.out
+*.app
+
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.pytest_cache/
+
+# Mac & Editor
+.DS_Store
+.vscode/
+
+# Reports (מתעלמים מהקבצים שנוצרו, אבל שומרים על התיקייה)
+reports/*
+!reports/.gitkeep
