@@ -1,0 +1,44 @@
+{
+  "files": [
+    {
+      "filename": "simple_leak.cpp",
+      "bugs": [
+        {
+          "line": 10,
+          "type": "memory_leak",
+          "severity": "error"
+        }
+      ]
+    },
+    {
+      "filename": "array_overflow.cpp",
+      "bugs": [
+        {
+          "line": 5,
+          "type": "out_of_bounds",
+          "severity": "error"
+        },
+        {
+          "line": 12,
+          "type": "uninitialized_variable",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "filename": "vulnerable.cpp",
+      "bugs": [
+        {
+          "line": 9,
+          "type": "out_of_bounds",
+          "severity": "error"
+        },
+        {
+          "line": 19,
+          "type": "memory_leak",
+          "severity": "error"
+        }
+      ]
+    }
+  ]
+}

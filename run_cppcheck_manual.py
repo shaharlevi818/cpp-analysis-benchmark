@@ -28,11 +28,14 @@ def save_report(tool_name, file_name, result):
         lf.write(f"File: {file_name}\n\n")
 
         if result['passed']:
-            lf.write("No bugs founded.\n")
+            lf.write("No bugs found.\n")
         else:
             lf.write(f"Found {len(result['bugs'])} issues:\n")
             for bug in result['bugs']:
-                lf.write(f"{bug}\n")
+                line = bug['line']
+                severity = bug['severity'].upper()
+                massage = bug['massage']
+                lf.write(f"[Line {line}][{severity}]: {massage}\n")
         
         print(f"[+] Created log file: {log_file}")
 
