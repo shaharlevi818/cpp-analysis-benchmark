@@ -2,7 +2,9 @@
 
 import subprocess
 import os
+from typing import Any, Dict
 from abc import ABC, abstractmethod
+
 
 class AnalysisTool(ABC):
     """
@@ -12,6 +14,17 @@ class AnalysisTool(ABC):
 
     def __init__(self, name):
         self.name = name
+
+    def run(self, file_path: str) -> Dict[str, Any]:
+        """
+        The main public method.
+        Orchestrates the process:
+        1. Runs the analysis command.
+        2. Parses the output.
+        Returns the clean, structured result.
+        """
+        raw_output = self.run_analysis(file_path)
+        return self.parse_output(raw_output)
 
     @abstractmethod
     def run_analysis(self, file_path: str):

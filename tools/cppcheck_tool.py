@@ -22,7 +22,6 @@ class CppCheckTool(AnalysisTool):
         return self.execute_command(command)
     
     def parse_output(self, raw_output: str) -> dict:
-        
         bugs = []
         lines = raw_output.split('\n')                                      # line = {file}:{line}:{severity}:{message}
         for line in lines:
@@ -36,8 +35,12 @@ class CppCheckTool(AnalysisTool):
                 message = ":".join(parts[3:])                                   # incase message has colons
             
                 if severity in ['error', 'warning']:                                # error and warning are also failures, append them to bugs.
-                    formatted_bug = f"[Line {line_number}] [{severity.upper()}]: {message}"
-                    bugs.append(formatted_bug)
+                    bug_details = { 
+                        "line": int(line_number),
+                        "severity": severity,
+                        "message": message.strip()
+                    }
+                    bugs.append(bug_details)
 
         return {
             "passed" : len(bugs) == 0,                                        # pass only if o bugs found
