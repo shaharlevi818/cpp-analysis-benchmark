@@ -1,6 +1,6 @@
 import pytest
 import os
-from tools.cppcheck_tool import CppCheckTool
+from tools.cppcheck_tool import CppcheckTool
 
 def test_cppcheck_detects_all_issues():
     """
@@ -10,7 +10,7 @@ def test_cppcheck_detects_all_issues():
     2. Memory Leak (Line 15 approx)
     """
 
-    tool = CppCheckTool()
+    tool = CppcheckTool()
     target_file = "src/vulnerable.cpp"
 
     assert os.path.exists(target_file), "File not found!"

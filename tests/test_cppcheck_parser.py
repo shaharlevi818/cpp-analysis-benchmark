@@ -1,5 +1,5 @@
 import pytest
-from tools.cppcheck_tool import CppCheckTool
+from tools.cppcheck_tool import CppcheckTool
 
 """
 Assuming that CppCheck is working properly, this test will check that the logic works. 
@@ -14,7 +14,7 @@ def test_parse_cppcheck_error():
     Expected Result: passed=False, bugs count=1
     """
 
-    tool = CppCheckTool()
+    tool = CppcheckTool()
     fake_output = "src/vulnerable.cpp:9:error:Array 'buffer[10]' accessed at index 12."
     
     # The fake output is passed to the function under test.
@@ -32,7 +32,7 @@ def test_parse_clean_output():
     Input: Empty string.
     Expected Result: passed=True, bugs count=0
     """
-    tool = CppCheckTool()
+    tool = CppcheckTool()
     fake_output = ""
     result = tool.parse_output(fake_output)
 
@@ -45,7 +45,7 @@ def test_ignore_style_issues():
     Test scenario: CppCheck finds a 'style' issue (not critical).
     The parser should IGNORE it because it's not 'error' or 'warning'.
     """
-    tool = CppCheckTool()
+    tool = CppcheckTool()
     fake_output = "src/file.cpp:5:style:Variable 'x' is assigned a value that is never used."
     
     result = tool.parse_output(fake_output)

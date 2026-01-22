@@ -1,7 +1,7 @@
 # run_cppcheck_manual.py
 
 import os
-from tools.cppcheck_tool import CppCheckTool
+from tools.cppcheck_tool import CppcheckTool
 
 
 """
@@ -41,7 +41,7 @@ def save_report(tool_name, file_name, result):
 
 def main():
     target_file = "src/vulnerable.cpp"
-    tool = CppCheckTool()
+    tool = CppcheckTool()
     print(f"Running {tool.name} on {target_file}...")
 
     # Run analysis

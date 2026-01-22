@@ -4,7 +4,7 @@
       "filename": "simple_leak.cpp",
       "bugs": [
         {
-          "line": 10,
+          "line": 11,
           "type": "memory_leak",
           "severity": "error"
         }

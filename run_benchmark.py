@@ -10,15 +10,6 @@ if __name__ == "__main__":
         manager = BenchmarkManager()
         print(f"Project Root detected as: {manager.project_root}")
 
-        # # for testing - start
-        # files = manager.get_files_to_test()
-        # print("\nFiles found for testing:")
-
-        # for file in files:
-        #     print(f" - {file}")
-
-        # # for testing - end
-
         manager.run_all_tests()
 
     except Exception as e:

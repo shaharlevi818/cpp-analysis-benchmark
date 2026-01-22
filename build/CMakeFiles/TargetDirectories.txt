@@ -1,0 +1,4 @@
+/app/build/CMakeFiles/vulnerable_test.dir
+/app/build/CMakeFiles/leak_test.dir
+/app/build/CMakeFiles/edit_cache.dir
+/app/build/CMakeFiles/rebuild_cache.dir
